@@ -1,6 +1,13 @@
 package com.example.demo2;
 
-public class ValueBean {
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
+
+import java.io.Serializable;
+
+@Named
+@RequestScoped
+public class ValueBean implements Serializable {
     private String value = "Some random value";
     public String getValue() {
         return value;

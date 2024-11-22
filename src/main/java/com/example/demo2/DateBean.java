@@ -1,8 +1,15 @@
 package com.example.demo2;
+import jakarta.annotation.ManagedBean;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class DateBean {
+
+@Named
+@RequestScoped
+public class DateBean implements Serializable {
     private Date curDate;
 
     public DateBean() {
