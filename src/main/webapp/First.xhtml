@@ -6,7 +6,19 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Hello, world"/>
+    <h:dataTable value="#{valueController.valuesList}" var="value">
+        <h:column>
+            #{value}
+        </h:column>
+        <h:column>
+            <h:commandButton value="Remove" action="#{valueController.removeValue(value)}" />
+        </h:column>
+    </h:dataTable>
+
+    <h:form>
+        <h:inputText id="newValue" value="#{valueController.newValue}" required="true" />
+        <h:commandButton value="Add" action="#{valueController.addValue}" />
+    </h:form>
 
     <div class="card-body">
         <p class="text-center">
