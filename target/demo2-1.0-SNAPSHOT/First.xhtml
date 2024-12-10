@@ -6,12 +6,12 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:dataTable value="#{valueController.valuesList}" var="value">
+    <h:dataTable value="#{valueController.valuesList}" var="item">
         <h:column>
-            #{value}
+            #{item}
         </h:column>
         <h:column>
-            <h:commandButton value="Remove" action="#{valueController.removeValue(value)}" />
+            <h:commandButton value="Remove" action="#{valueController.removeValue(item)}" />
         </h:column>
     </h:dataTable>
 

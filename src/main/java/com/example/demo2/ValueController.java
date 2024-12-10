@@ -10,6 +10,7 @@ import java.util.List;
 public class ValueController implements Serializable {
     private ValueContainer valueContainer = new ValueContainer();
     private String newValue;
+    private String deleteValue;
 
     public ValueController() {
         valueContainer.addValues("Roman");
@@ -28,13 +29,12 @@ public class ValueController implements Serializable {
 
     public void addValue() {
         valueContainer.addValues(newValue);
-        newValue = ""; // очищаємо поле після додавання
+        newValue = "";
     }
 
-    public void removeValue(String value) {
-        valueContainer.remove(value);
+    public void removeValue(String item) {
+        valueContainer.remove(item);
     }
-
     public List<String> getValuesList() {
         return valueContainer.getValuesList();
     }
