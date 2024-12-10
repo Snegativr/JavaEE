@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+   <h:head>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+   </h:head>
+   <h:body>
+      <div class="container mt-5">
+         <h:form>
+            <h3 class="mb-4 text-center">Calculator</h3>
+            <div class="mb-3">
+               <h:outputLabel value="Enter number: " class="form-label" />
+               <h:inputText id="input" value="#{calculationBean.input}" required="true" class="form-control" />
+            </div>
+            <div class="d-flex gap-2 mb-4 justify-content-center">
+               <h:commandButton value="+" action="#{calculationBean.add}" class="btn btn-primary" />
+               <h:commandButton value="-" action="#{calculationBean.subtract}" class="btn btn-secondary" />
+               <h:commandButton value="*" action="#{calculationBean.multiply}" class="btn btn-success" />
+               <h:commandButton value="/" action="#{calculationBean.divide}" class="btn btn-danger" />
+            </div>
+            <h:outputText  value="Result: #{calculationBean.value}" class="fw-bold text-success text-center" />
+         </h:form>
+         <h:form class="mt-5 justify-content-center">
+            <h3 class="mb-4 ">CalculationBean Metadata</h3>
+            <h:outputText value="#{metadataController.beanMetadata}" class="form-text" />
+         </h:form>
+      </div>
+      </h:body>
+
+   <div class="card-body">
+      <p class="text-center">
+         <h:button value="Move back" outcome="index.xhtml" />
+      </p>
+   </div>
+</f:view>
+</html>
